@@ -15,9 +15,9 @@ pipeline {
           }
         }
 
-        stage('Front-End Unit Tests') {
+        stage('Build') {
           steps {
-            sh 'cd curriculum-front && npm i && npm run dev -- --host'
+            sh 'docker build -f curriculum-front/Dockerfile -t fuze365/curriculum-front:latest .'
           }
         }
 
